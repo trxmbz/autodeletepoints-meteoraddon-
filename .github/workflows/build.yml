@@ -15,7 +15,9 @@ jobs:
           distribution: temurin
           java-version: 25
       - name: Build
-        run: ./gradlew build
+        run: |
+          chmod +x gradlew
+          ./gradlew build
       - uses: actions/upload-artifact@v4
         with:
           name: points-addon
